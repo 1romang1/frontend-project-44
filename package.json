@@ -1,0 +1,19 @@
+{
+  "name": "@hexle/code",
+  "version": "1.0.0",
+  "description": "first project on Hexlet",
+  "main": "brain-games.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1romang1/frontend-project-44.git"
+  },
+  "author": "Roma Gladysh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1romang1/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/1romang1/frontend-project-44#readme"
+}
