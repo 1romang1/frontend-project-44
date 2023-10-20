@@ -1,5 +1,12 @@
-export const readlineSync = require("readline-sync");
+import { createRequire } from "module";
 
-export const userName = readlineSync.question("May I have your name? ");
-console.log("Hi " + userName + "!");
+console.log("Welcome to the Brain Games!");
 
+const require = createRequire(import.meta.url);
+
+const readlineSync = require("readline-sync");
+
+const userName = readlineSync.question("May I have your name? ");
+export const greeting = () => {
+  console.log("Hi " + userName + "!");
+};
