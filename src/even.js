@@ -18,6 +18,12 @@ for (let i = 0; i <= 2; i += 1) {
   const randomNum = getRandomNum(100);
   const randomNumQuestoinPhrase = `Question: ${randomNum} `;
   const answer = readlineSync.question(randomNumQuestoinPhrase);
+  let correctAnswer = '';
+  if (randomNum % 2 === 0) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
 
   console.log(`Your answer: ${answer}`);
 
@@ -27,14 +33,14 @@ for (let i = 0; i <= 2; i += 1) {
   ) {
     console.log('Correct!');
   } else {
-    let oppositAnswer;
-    if (answer === 'yes') {
-      oppositAnswer = 'no';
-    } else {
-      oppositAnswer = 'yes';
-    }
+    // let oppositAnswer;
+    // if (answer === 'yes') {
+    //   oppositAnswer = 'no';
+    // } else {
+    //   oppositAnswer = 'yes';
+    // }
     console.log(
-      `'${answer}' is wrong answer ;(. Correct answer was '${oppositAnswer}'. Let's try again, ${userName}`,
+      `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`,
     );
     break;
   }
