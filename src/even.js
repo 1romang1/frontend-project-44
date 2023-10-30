@@ -39,8 +39,9 @@ const evenGame = () => {
       );
       break;
     }
+    if (i === 2) console.log(`Congratulations, ${userName}!`);
   }
-  console.log(`Congratulations, ${userName}!`);
+  // console.log(`Congratulations, ${userName}!`);
 };
 
 export default evenGame;
