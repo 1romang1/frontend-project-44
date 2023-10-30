@@ -1,17 +1,20 @@
 import readlineSync from 'readline-sync';
+import greeting from './cli.js';
+import getRandomNum from './getRandomNum.js';
 
 const evenGame = () => {
-  console.log('Welcome to the Brain Games!');
+  // console.log('Welcome to the Brain Games!');
 
-  const userName = readlineSync.question('May I have your name? ');
+  // const userName = readlineSync.question('May I have your name? ');
 
-  const greeting = () => {
-    console.log(`Hi ${userName}!`);
-  };
+  // const greeting = () => {
+  //   console.log(`Hi ${userName}!`);
+  // };
 
   greeting();
 
-  const getRandomNum = (max) => Math.floor(Math.random() * max);
+  // const getRandomNum = (max) => Math.floor(Math.random() * max);
+  
 
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
