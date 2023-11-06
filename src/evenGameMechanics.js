@@ -20,7 +20,6 @@ const evenGameMechanics = () => {
     } else {
       break;
     }
-    // toCongrat(questionСounter);
   }
 };
 

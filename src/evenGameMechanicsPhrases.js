@@ -14,10 +14,9 @@ const evenGameMechanicsPhrases = (randomNum, answer) => {
   console.log(
     `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`,
   );
-  // break;
   result = false;
   return result;
 };
-evenGameMechanicsPhrases();
+
 export { result };
 export default evenGameMechanicsPhrases;

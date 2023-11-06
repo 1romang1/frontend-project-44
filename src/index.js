@@ -1,9 +1,9 @@
 import readlineSync from "readline-sync";
 
+console.log("Welcome to the Brain Games!");
 export const userName = readlineSync.question("May I have your name? ");
 
 const greeting = () => {
-  console.log("Welcome to the Brain Games!");
   console.log(`Hi ${userName}!`);
 };
 
@@ -11,37 +11,40 @@ const task = (taskDescr) => {
   console.log(taskDescr);
 };
 
-const toCongrat = (questionСounter) => {
-  if (questionСounter === 2) console.log(`Congratulations, ${userName}!`);
+const toCongrat = (questionCounter) => {
+  if (questionCounter === 2) console.log(`Congratulations, ${userName}!`);
 };
 
 const app = (
   taskDescr,
   generateTask,
   gameMechanicsPhrases,
-  isCorrectAnswer,
+  isCorrectAnswer
 ) => {
   greeting();
   task(taskDescr);
 
   for (let questionCounter = 0; questionCounter <= 2; questionCounter += 1) {
-    const randomTask = generateTask();
-    // const taskQuestoinPhrase = `Question: ${randomTask} `;
-    const answer = readlineSync.question(`Question: ${randomTask} `);
+    const taskValue = generateTask();
+    // const taskQuestoinPhrase = `Question: ${taskValue} `;
+    const answer = readlineSync.question(`Question: ${taskValue} `);
 
     console.log(`Your answer: ${answer}`);
 
-    const correctAnswer = isCorrectAnswer(randomTask);
-    console.log(`Correct answer: ${correctAnswer}`);
+    const correctAnswer = isCorrectAnswer(taskValue);
+    console.log(`Correct answer: ${typeof correctAnswer}`);
 
-    const result = gameMechanicsPhrases(randomTask, answer, correctAnswer);
+    const result = gameMechanicsPhrases(taskValue, answer, correctAnswer);
 
-    if (result) {
+    if (result === true) {
       toCongrat(questionCounter);
     } else {
+      console.log(answer)
       break;
     }
+    
   }
+ 
 };
 
 export default app;
