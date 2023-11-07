@@ -1,39 +1,31 @@
-import app from "../index.js";
-import { userName } from "../index.js";
+import app from '../index.js';
 
-const TASK_DESCR = 'Answer "yes" if the number is even, otherwise answer "no".';
+const TASK_PHRASE = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const generateTask = () => Math.floor(Math.random() * 100);
-
-const isCorrectAnswer = (taskValue) => {
-  let temp = "";
+const generateTaskValuesEven = () => {
+  const values = [];
+  const taskValue = Math.floor(Math.random() * 100);
+  values.push(taskValue);
+  let correctAnswer = '';
   if (taskValue % 2 === 0) {
-    temp = "yes";
+    correctAnswer = 'yes';
   } else {
-    temp = "no";
+    correctAnswer = 'no';
   }
-  // return temp.toString();
-  console.log(typeof temp)
-  return temp;
-
+  values.push(correctAnswer);
+  return values;
 };
-// let result;
-const gameMechanicsPhrases = (taskValue, answer, correctAnswer) => {
-  let result = '';
-  if (
-    (taskValue % 2 === 0 && answer === "yes") ||
-    (taskValue % 2 !== 0 && answer === "no")
-  ) {
-    console.log("Correct!");
+
+const isCorrectAnswerEven = (correctAnswer, userAnswer) => {
+  let result;
+
+  if (correctAnswer === userAnswer) {
     result = true;
-    return result;
+  } else {
+    result = false;
   }
-  console.log(
-    `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}`
-  );
-  result = false;
+
   return result;
 };
 
-export default () =>
-  app(TASK_DESCR, generateTask, isCorrectAnswer, gameMechanicsPhrases);
+export default () => app(TASK_PHRASE, generateTaskValuesEven, isCorrectAnswerEven);

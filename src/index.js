@@ -1,50 +1,39 @@
 import readlineSync from "readline-sync";
 
 console.log("Welcome to the Brain Games!");
-export const userName = readlineSync.question("May I have your name? ");
-
-const greeting = () => {
+const userName = readlineSync.question("May I have your name? ");
+const greeting = (userName) => {
   console.log(`Hi ${userName}!`);
 };
-
-const task = (taskDescr) => {
-  console.log(taskDescr);
+const taskDescr = (taskPhrase) => {
+  console.log(`${taskPhrase}`);
 };
+const app = (taskPhrase, generateTaskValues, isCorrectAnswer) => {
+  greeting(userName);
+  taskDescr(taskPhrase);
 
-const toCongrat = (questionCounter) => {
-  if (questionCounter === 2) console.log(`Congratulations, ${userName}!`);
-};
-
-const app = (
-  taskDescr,
-  generateTask,
-  gameMechanicsPhrases,
-  isCorrectAnswer
-) => {
-  greeting();
-  task(taskDescr);
-
-  for (let questionCounter = 0; questionCounter <= 2; questionCounter += 1) {
-    const taskValue = generateTask();
-    // const taskQuestoinPhrase = `Question: ${taskValue} `;
-    const answer = readlineSync.question(`Question: ${taskValue} `);
-
-    console.log(`Your answer: ${answer}`);
-
-    const correctAnswer = isCorrectAnswer(taskValue);
-    console.log(`Correct answer: ${typeof correctAnswer}`);
-
-    const result = gameMechanicsPhrases(taskValue, answer, correctAnswer);
+  let i = 0;
+  const iterationCounter = 3;
+  do {
+    const [taskValue, correctAnswer] = generateTaskValues();
+    const userAnswer = readlineSync.question(`Question: ${taskValue} `);
+    console.log(`Your answer: ${userAnswer}`);
+    const result = isCorrectAnswer(correctAnswer, userAnswer);
 
     if (result === true) {
-      toCongrat(questionCounter);
+      console.log("Correct!");
+
+      i += 1;
     } else {
-      console.log(answer)
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'
+    Let's try again, ${userName}!`);
       break;
     }
-    
+  } while (i < iterationCounter);
+
+  if (i === 3) {
+    console.log(`Congratulations, ${userName}!`);
   }
- 
 };
 
 export default app;
