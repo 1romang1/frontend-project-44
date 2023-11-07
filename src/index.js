@@ -1,0 +1,39 @@
+import readlineSync from "readline-sync";
+
+console.log("Welcome to the Brain Games!");
+const userName = readlineSync.question("May I have your name? ");
+const greeting = (userName) => {
+  console.log(`Hi ${userName}!`);
+};
+const taskDescr = (taskPhrase) => {
+  console.log(`${taskPhrase}`);
+};
+const app = (taskPhrase, generateTaskValues, isCorrectAnswer) => {
+  greeting(userName);
+  taskDescr(taskPhrase);
+
+  let i = 0;
+  const iterationCounter = 3;
+  do {
+    const [taskValue, correctAnswer] = generateTaskValues();
+    const userAnswer = readlineSync.question(`Question: ${taskValue} `);
+    console.log(`Your answer: ${userAnswer}`);
+    const result = isCorrectAnswer(correctAnswer, userAnswer);
+
+    if (result === true) {
+      console.log("Correct!");
+
+      i += 1;
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'
+    Let's try again, ${userName}!`);
+      break;
+    }
+  } while (i < iterationCounter);
+
+  if (i === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
+};
+
+export default app;
