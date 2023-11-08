@@ -8,7 +8,18 @@ const greeting = (userName) => {
 const taskDescr = (taskPhrase) => {
   console.log(`${taskPhrase}`);
 };
-const app = (taskPhrase, generateTaskValues, isCorrectAnswer) => {
+
+const isCorrectAnswer = (correctAnswer, userAnswer) => {
+  let result;
+  if (correctAnswer == userAnswer) {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result;
+};
+
+const app = (taskPhrase, generateTaskValues) => {
   greeting(userName);
   taskDescr(taskPhrase);
 

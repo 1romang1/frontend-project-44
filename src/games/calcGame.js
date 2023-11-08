@@ -31,16 +31,4 @@ const generateTaskValuesCalc = () => {
   return values;
 };
 
-const isCorrectAnswerCalc = (correctAnswer, userAnswer) => {
-  let result;
-
-  if (correctAnswer == userAnswer) {
-    result = true;
-  } else {
-    result = false;
-  }
-
-  return result;
-};
-
-export default () => app(TASK_PHRASE, generateTaskValuesCalc, isCorrectAnswerCalc);
+export default () => app(TASK_PHRASE, generateTaskValuesCalc);

@@ -16,16 +16,4 @@ const generateTaskValuesEven = () => {
   return values;
 };
 
-const isCorrectAnswerEven = (correctAnswer, userAnswer) => {
-  let result;
-
-  if (correctAnswer === userAnswer) {
-    result = true;
-  } else {
-    result = false;
-  }
-
-  return result;
-};
-
-export default () => app(TASK_PHRASE, generateTaskValuesEven, isCorrectAnswerEven);
+export default () => app(TASK_PHRASE, generateTaskValuesEven);
