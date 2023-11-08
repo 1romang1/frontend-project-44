@@ -1,0 +1,34 @@
+import app from "../index.js";
+
+const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
+
+const generateTaskValuesGcd = () => {
+  // const values = [];
+
+  // const num1 = Math.floor(Math.random() * 100);
+  // const num2 = Math.floor(Math.random() * 100);
+
+  // const operators = ["+", "-", "*"];
+  // const randomOperator =
+  //   operators[Math.floor(Math.random() * operators.length)];
+
+  // const taskValue = num1 + " " + randomOperator + " " + num2;
+
+  // values.push(taskValue);
+
+  // let correctAnswer;
+  // switch (randomOperator) {
+  //   case "+":
+  //     correctAnswer = num1 + num2;
+  //     break;
+  //   case "-":
+  //     correctAnswer = num1 - num2;
+  //     break;
+  //   case "*":
+  //     correctAnswer = num1 * num2;
+  // }
+  // values.push(correctAnswer);
+  // return values;
+};
+
+export default () => app(TASK_PHRASE, generateTaskValuesGcd);
