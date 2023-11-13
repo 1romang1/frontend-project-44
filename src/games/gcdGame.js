@@ -1,15 +1,13 @@
-// import app from "../index.js";
+import app from "../index.js";
 
-// const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
+const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
 
-// учесть  случай если большее число делится на меньшее функция compare в начале файла
+
 
 const generateTaskValuesGcd = () => {
   const values = [];
 
-if ()
-
-  const correctAnswer
+  let correctAnswer;
 
   const MIN = 2;
   const MAX = 100;
@@ -17,62 +15,83 @@ if ()
   const num1 = Math.floor(Math.random() * (MAX - MIN) + MIN);
   const num2 = Math.floor(Math.random() * (MAX - MIN) + MIN);
 
-  const taskValue = `${num1} ${num2}`;
-
-  console.log(`num1 = ${num1}`);
-  console.log(`num2 = ${num2}`);
-  console.log(`taskValue = ${taskValue}`);
-
-  values.push(taskValue);
-
-  console.log(`values = ${values}`);
-
-  const dividersNum1 = [];
-  for (let i = 1; i < num1; i += 1) {
-    if (num1 % i === 0) {
-      dividersNum1.push(i);
-    }
-  }
-  const dividersNum2 = [];
-  for (let i = 1; i < num2; i += 1) {
-    if (num2 % i === 0) {
-      dividersNum2.push(i);
-    }
-  }
-  console.log(`dividersNum1 = ${dividersNum1}`);
-  console.log(`dividersNum2 = ${dividersNum2}`);
-
-  const intersectionNum1Num2 = [];
-  if (dividersNum1.length >= dividersNum2.length) {
-    for (const item of dividersNum1) {
-      if (dividersNum2.includes(item)) {
-        intersectionNum1Num2.push(item);
-      }
-    }
+  let smallerNum = 0;
+  let largerNum = 0;
+  
+  if (num1 > num2) {
+    largerNum = num1;
+    smallerNum = num2;
   } else {
-    for (const item of dividersNum2) {
-      if (dividersNum1.includes(item)) {
-        intersectionNum1Num2.push(item);
+    largerNum = num2;
+    smallerNum = num1;
+  }
+
+  if (largerNum % smallerNum === 0) {
+    correctAnswer = smallerNum;
+  } else {
+    const taskValue = `${largerNum} ${smallerNum}`;
+
+    // console.log(`largerNum = ${largerNum}`);
+    // console.log(`smallerNum = ${smallerNum}`);
+    // console.log(`taskValue = ${taskValue}`);
+
+    values.push(taskValue);
+
+    // console.log(`values = ${values}`);
+
+    const dividerslargerNum = [];
+    for (let i = 1; i < largerNum; i += 1) {
+      if (largerNum % i === 0) {
+        dividerslargerNum.push(i);
       }
     }
+    const dividersSmallerNum = [];
+    for (let i = 1; i < smallerNum; i += 1) {
+      if (smallerNum % i === 0) {
+        dividersSmallerNum.push(i);
+      }
+    }
+    // console.log(`dividerslargerNum = ${dividerslargerNum}`);
+    // console.log(`dividersSmallerNum = ${dividersSmallerNum}`);
+
+    const intersectionLargerNumSmallerNum = [];
+    if (dividerslargerNum.length >= dividersSmallerNum.length) {
+      for (const item of dividerslargerNum) {
+        if (dividersSmallerNum.includes(item)) {
+          intersectionLargerNumSmallerNum.push(item);
+        }
+      }
+    } else {
+      for (const item of dividersSmallerNum) {
+        if (dividerslargerNum.includes(item)) {
+          intersectionLargerNumSmallerNum.push(item);
+        }
+      }
+    }
+    // console.log(
+    //   `intersectionLargerNumSmallerNum = ${intersectionLargerNumSmallerNum}`
+    // );
+
+    const sortIntersectionLargerNumSmallerNum =
+      intersectionLargerNumSmallerNum.sort((a, b) => a - b);
+
+    // console.log(
+    //   `sortIntersectionLargerNumSmallerNum = ${sortIntersectionLargerNumSmallerNum}`
+    // );
+
+    correctAnswer =
+      sortIntersectionLargerNumSmallerNum[
+        sortIntersectionLargerNumSmallerNum.length - 1
+      ];
+
+    // console.log(`correctAnswer = ${correctAnswer}`);
+
+    values.push(correctAnswer);
+
+    // console.log(`values = ${values}`);
   }
-  console.log(`intersectionNum1Num2 = ${intersectionNum1Num2}`);
-
-  const sortIntersectionNum1Num2 = intersectionNum1Num2.sort((a, b) => a - b);
-
-  console.log(`sortIntersectionNum1Num2 = ${sortIntersectionNum1Num2}`);
-
-correctAnswer = sortIntersectionNum1Num2[sortIntersectionNum1Num2.length - 1];
-
-  console.log(`correctAnswer = ${correctAnswer}`);
-
-  values.push(correctAnswer);
-
-  console.log(`values = ${values}`);
-
-  // return values;
+  // console.log(`values = ${values}`);
+  return values;
 };
 
-// export default () => app(TASK_PHRASE, generateTaskValuesGcd);
-
-generateTaskValuesGcd();
+export default () => app(TASK_PHRASE, generateTaskValuesGcd);
