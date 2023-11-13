@@ -2,8 +2,6 @@ import app from "../index.js";
 
 const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
 
-// разобраться с типом данных taskvalue
-
 const generateTaskValuesGcd = () => {
   const values = [];
 
@@ -17,7 +15,7 @@ const generateTaskValuesGcd = () => {
 
   let smallerNum = 0;
   let largerNum = 0;
-  
+
   if (num1 > num2) {
     largerNum = num1;
     smallerNum = num2;
@@ -34,16 +32,6 @@ const generateTaskValuesGcd = () => {
   if (largerNum % smallerNum === 0) {
     correctAnswer = smallerNum;
   } else {
-   
-
-    // console.log(`largerNum = ${largerNum}`);
-    // console.log(`smallerNum = ${smallerNum}`);
-    // console.log(`taskValue = ${taskValue}`);
-
-    
-
-    // console.log(`values = ${values}`);
-
     const dividerslargerNum = [];
     for (let i = 1; i < largerNum; i += 1) {
       if (largerNum % i === 0) {
@@ -56,8 +44,6 @@ const generateTaskValuesGcd = () => {
         dividersSmallerNum.push(i);
       }
     }
-    // console.log(`dividerslargerNum = ${dividerslargerNum}`);
-    // console.log(`dividersSmallerNum = ${dividersSmallerNum}`);
 
     const intersectionLargerNumSmallerNum = [];
     if (dividerslargerNum.length >= dividersSmallerNum.length) {
@@ -73,33 +59,18 @@ const generateTaskValuesGcd = () => {
         }
       }
     }
-    // console.log(
-    //   `intersectionLargerNumSmallerNum = ${intersectionLargerNumSmallerNum}`
-    // );
 
     const sortIntersectionLargerNumSmallerNum =
       intersectionLargerNumSmallerNum.sort((a, b) => a - b);
-
-    // console.log(
-    //   `sortIntersectionLargerNumSmallerNum = ${sortIntersectionLargerNumSmallerNum}`
-    // );
 
     correctAnswer =
       sortIntersectionLargerNumSmallerNum[
         sortIntersectionLargerNumSmallerNum.length - 1
       ];
 
-    // console.log(`correctAnswer = ${correctAnswer}`);
-
     values.push(correctAnswer);
-
-    // console.log(`values = ${values}`);
   }
-  // console.log(`values = ${values}`);
-  // console.log(typeof values[0])
   return values;
 };
 
 export default () => app(TASK_PHRASE, generateTaskValuesGcd);
-
-// generateTaskValuesGcd();

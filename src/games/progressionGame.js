@@ -1,8 +1,8 @@
-import app from "../index.js";
+// import app from "../index.js";
 
-const TASK_PHRASE = "What number is missing in the progression?";
+// const TASK_PHRASE = "What number is missing in the progression?";
 
-const generateTaskValuesGcd = () => {
+const generateTaskValuesProgression = () => {
   const values = [];
 
   let correctAnswer;
@@ -10,67 +10,33 @@ const generateTaskValuesGcd = () => {
   const MIN = 2;
   const MAX = 100;
 
-  const num1 = Math.floor(Math.random() * (MAX - MIN) + MIN);
-  const num2 = Math.floor(Math.random() * (MAX - MIN) + MIN);
+  const APset = [];
+  let startNum = Math.floor(Math.random() * (MAX - MIN) + MIN);
+  console.log(`startNum = ${startNum}`);
+  APset.push(startNum);
+  console.log(`first action APset = ${APset}`);
 
-  let smallerNum = 0;
-  let largerNum = 0;
-
-  if (num1 > num2) {
-    largerNum = num1;
-    smallerNum = num2;
-  } else {
-    largerNum = num2;
-    smallerNum = num1;
+  const differenceAP = Math.floor(Math.random() * (MAX - MIN) + MIN);
+  console.log(`differenceAP = ${differenceAP}`);
+  for (let i = 0; i < 9; i += 1) {
+    const nextAPNum = startNum + differenceAP;
+    startNum = nextAPNum;
+    APset.push(nextAPNum);
   }
+  console.log(`APset = ${APset[0]} ${APset[1]} ${APset[2]} ${APset[3]} ${APset[4]} ${APset[5]} ${APset[6]} ${APset[7]} ${APset[8]} ${APset[9]}`);
 
-  const taskValue = [];
-  taskValue.push(largerNum);
-  taskValue.push(smallerNum);
-  values.push(taskValue);
+const taskValue = APset[Math.floor(Math.random()*APset.length)];
+console.log(`taskValue = ${taskValue}`);
+  
 
-  if (largerNum % smallerNum === 0) {
-    correctAnswer = smallerNum;
-  } else {
-    const dividerslargerNum = [];
-    for (let i = 1; i < largerNum; i += 1) {
-      if (largerNum % i === 0) {
-        dividerslargerNum.push(i);
-      }
-    }
-    const dividersSmallerNum = [];
-    for (let i = 1; i < smallerNum; i += 1) {
-      if (smallerNum % i === 0) {
-        dividersSmallerNum.push(i);
-      }
-    }
+  //   correctAnswer =
+  //     
 
-    const intersectionLargerNumSmallerNum = [];
-    if (dividerslargerNum.length >= dividersSmallerNum.length) {
-      for (const item of dividerslargerNum) {
-        if (dividersSmallerNum.includes(item)) {
-          intersectionLargerNumSmallerNum.push(item);
-        }
-      }
-    } else {
-      for (const item of dividersSmallerNum) {
-        if (dividerslargerNum.includes(item)) {
-          intersectionLargerNumSmallerNum.push(item);
-        }
-      }
-    }
+  //   values.push(correctAnswer);
 
-    const sortIntersectionLargerNumSmallerNum =
-      intersectionLargerNumSmallerNum.sort((a, b) => a - b);
-
-    correctAnswer =
-      sortIntersectionLargerNumSmallerNum[
-        sortIntersectionLargerNumSmallerNum.length - 1
-      ];
-
-    values.push(correctAnswer);
-  }
-  return values;
+  // return values;
 };
 
-export default () => app(TASK_PHRASE, generateTaskValuesGcd);
+// export default () => app(TASK_PHRASE, generateTaskValuesProgression);
+
+generateTaskValuesProgression();
