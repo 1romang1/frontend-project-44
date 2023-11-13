@@ -27,7 +27,7 @@ const app = (taskPhrase, generateTaskValues) => {
   const iterationCounter = 3;
   do {
     const [taskValue, correctAnswer] = generateTaskValues();
-    const userAnswer = readlineSync.question(`Question: ${taskValue} `);
+    const userAnswer = readlineSync.question(`Question: ${taskValue[0]} ${taskValue[1]} `);
     console.log(`Your answer: ${userAnswer}`);
     const result = isCorrectAnswer(correctAnswer, userAnswer);
 

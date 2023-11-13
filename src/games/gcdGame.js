@@ -2,7 +2,7 @@ import app from "../index.js";
 
 const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
 
-
+// разобраться с типом данных taskvalue
 
 const generateTaskValuesGcd = () => {
   const values = [];
@@ -26,16 +26,21 @@ const generateTaskValuesGcd = () => {
     smallerNum = num1;
   }
 
+  const taskValue = [];
+  taskValue.push(largerNum);
+  taskValue.push(smallerNum);
+  values.push(taskValue);
+
   if (largerNum % smallerNum === 0) {
     correctAnswer = smallerNum;
   } else {
-    const taskValue = `${largerNum} ${smallerNum}`;
+   
 
     // console.log(`largerNum = ${largerNum}`);
     // console.log(`smallerNum = ${smallerNum}`);
     // console.log(`taskValue = ${taskValue}`);
 
-    values.push(taskValue);
+    
 
     // console.log(`values = ${values}`);
 
@@ -91,7 +96,10 @@ const generateTaskValuesGcd = () => {
     // console.log(`values = ${values}`);
   }
   // console.log(`values = ${values}`);
+  // console.log(typeof values[0])
   return values;
 };
 
 export default () => app(TASK_PHRASE, generateTaskValuesGcd);
+
+// generateTaskValuesGcd();
