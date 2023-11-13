@@ -12,3 +12,7 @@
 #### Game: "Calculator"
 
 [![asciicast](https://asciinema.org/a/84OzeBPgkpOOsqLXyYWxhryPE.svg)](https://asciinema.org/a/84OzeBPgkpOOsqLXyYWxhryPE)
+
+#### Game: "GCD"
+
+[![asciicast](https://asciinema.org/a/gFYf6iLhh54auNGEghFNBbUWe.svg)](https://asciinema.org/a/gFYf6iLhh54auNGEghFNBbUWe)
