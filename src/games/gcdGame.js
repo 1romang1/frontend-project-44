@@ -24,13 +24,15 @@ const generateTaskValuesGcd = () => {
     smallerNum = num1;
   }
 
-  const taskValue = [];
+  let taskValue = [];
   taskValue.push(largerNum);
   taskValue.push(smallerNum);
+  taskValue = taskValue.join(' ');
   values.push(taskValue);
 
   if (largerNum % smallerNum === 0) {
     correctAnswer = smallerNum;
+    values.push(correctAnswer);
   } else {
     const dividerslargerNum = [];
     for (let i = 1; i < largerNum; i += 1) {
