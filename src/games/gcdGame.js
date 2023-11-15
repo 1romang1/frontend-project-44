@@ -1,6 +1,16 @@
-import app from "../index.js";
+// import app from "../index.js";
 
-const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
+// const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
+
+const createDeviders = (num) => {
+  const dividerNum = [];
+  for (let i = 1; i < num; i += 1) {
+    if (num % i === 0) {
+      dividerNum.push(i);
+    }
+  }
+  return dividerNum;
+};
 
 const generateTaskValuesGcd = () => {
   const values = [];
@@ -27,25 +37,25 @@ const generateTaskValuesGcd = () => {
   let taskValue = [];
   taskValue.push(largerNum);
   taskValue.push(smallerNum);
-  taskValue = taskValue.join(' ');
+  taskValue = taskValue.join(" ");
   values.push(taskValue);
 
   if (largerNum % smallerNum === 0) {
     correctAnswer = smallerNum;
     values.push(correctAnswer);
   } else {
-    const dividerslargerNum = [];
-    for (let i = 1; i < largerNum; i += 1) {
-      if (largerNum % i === 0) {
-        dividerslargerNum.push(i);
-      }
-    }
-    const dividersSmallerNum = [];
-    for (let i = 1; i < smallerNum; i += 1) {
-      if (smallerNum % i === 0) {
-        dividersSmallerNum.push(i);
-      }
-    }
+    const dividerslargerNum = createDeviders(largerNum);
+    // for (let i = 1; i < largerNum; i += 1) {
+    //   if (largerNum % i === 0) {
+    //     dividerslargerNum.push(i);
+    //   }
+    // }
+    const dividersSmallerNum = createDeviders(smallerNum);
+    // for (let i = 1; i < smallerNum; i += 1) {
+    //   if (smallerNum % i === 0) {
+    //     dividersSmallerNum.push(i);
+    //   }
+    // }
 
     const intersectionLargerNumSmallerNum = [];
     if (dividerslargerNum.length >= dividersSmallerNum.length) {
@@ -72,7 +82,9 @@ const generateTaskValuesGcd = () => {
 
     values.push(correctAnswer);
   }
-  return values;
+  // return values;
+  console.log(`values = ${values}`)
 };
 
-export default () => app(TASK_PHRASE, generateTaskValuesGcd);
+// export default () => app(TASK_PHRASE, generateTaskValuesGcd);
+generateTaskValuesGcd()
