@@ -20,3 +20,7 @@
 #### Game: "Arithmetic progression"
 
 [![asciicast](https://asciinema.org/a/eMVW1hdpw9KYWy559iMyyqvgh.svg)](https://asciinema.org/a/eMVW1hdpw9KYWy559iMyyqvgh)
+
+#### Game: "Is it a prime number?"
+
+[![asciicast](https://asciinema.org/a/RXLvacN7PtM5891qs6sM2i5ak.svg)](https://asciinema.org/a/RXLvacN7PtM5891qs6sM2i5ak)
