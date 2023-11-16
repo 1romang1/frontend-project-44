@@ -37,7 +37,7 @@ const generateTaskValuesGcd = () => {
   let taskValue = [];
   taskValue.push(largerNum);
   taskValue.push(smallerNum);
-  taskValue = taskValue.join(" ");
+  taskValue = taskValue.join(' ');
   values.push(taskValue);
 
   if (largerNum % smallerNum === 0) {
@@ -72,19 +72,17 @@ const generateTaskValuesGcd = () => {
       }
     }
 
-    const sortIntersectionLargerNumSmallerNum =
-      intersectionLargerNumSmallerNum.sort((a, b) => a - b);
+  const sortIntersectionLargerNumSmallerNum = intersectionLargerNumSmallerNum.sort((a, b) => a - b);
 
-    correctAnswer =
-      sortIntersectionLargerNumSmallerNum[
-        sortIntersectionLargerNumSmallerNum.length - 1
-      ];
+    correctAnswer = sortIntersectionLargerNumSmallerNum[
+      sortIntersectionLargerNumSmallerNum.length - 1
+    ];
 
     values.push(correctAnswer);
   }
   // return values;
-  console.log(`values = ${values}`)
+  console.log(`values = ${values}`);
 };
 
 // export default () => app(TASK_PHRASE, generateTaskValuesGcd);
-generateTaskValuesGcd()
+generateTaskValuesGcd();

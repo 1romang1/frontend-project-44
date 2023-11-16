@@ -1,6 +1,6 @@
-import app from "../index.js";
+import app from '../index.js';
 
-const TASK_PHRASE = "What number is missing in the progression?";
+const TASK_PHRASE = 'What number is missing in the progression?';
 
 const generateTaskValuesProgression = () => {
   const values = [];
@@ -25,9 +25,9 @@ const generateTaskValuesProgression = () => {
   const indexOfElement = APset.indexOf(randomElement);
 
   const correctAnswer = APset[indexOfElement];
-  APset[indexOfElement] = "..";
+  APset[indexOfElement] = '..';
 
-  const taskValue = APset.join(" ");
+  const taskValue = APset.join(' ');
   values.push(taskValue);
   values.push(correctAnswer);
 

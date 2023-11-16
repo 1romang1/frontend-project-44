@@ -1,20 +1,19 @@
-import app from "../index.js";
+import app from '../index.js';
 
-const TASK_PHRASE =
-  'Answer "yes" if given number is prime. Otherwise answer "no".';
+const TASK_PHRASE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const generateTaskValuesPrime = () => {
   const FIRST_500_PRIME_NUMBERS = 3571;
   const values = [];
   const taskValue = Math.floor(Math.random() * FIRST_500_PRIME_NUMBERS);
   values.push(taskValue);
-  let correctAnswer = "";
+  let correctAnswer = '';
   for (let i = 2; i < taskValue; i += 1) {
     if (taskValue % i === 0) {
-      correctAnswer = "no";
+      correctAnswer = 'no';
       break;
     } else {
-      correctAnswer = "yes";
+      correctAnswer = 'yes';
     }
   }
   values.push(correctAnswer);

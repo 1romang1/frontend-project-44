@@ -1,6 +1,6 @@
-import app from "../index.js";
+import app from '../index.js';
 
-const TASK_PHRASE = "What is the result of the expression?";
+const TASK_PHRASE = 'What is the result of the expression?';
 
 const generateTaskValuesCalc = () => {
   const values = [];
@@ -8,23 +8,22 @@ const generateTaskValuesCalc = () => {
   const num1 = Math.floor(Math.random() * 100);
   const num2 = Math.floor(Math.random() * 100);
 
-  const operators = ["+", "-", "*"];
-  const randomOperator =
-    operators[Math.floor(Math.random() * operators.length)];
+  const operators = ['+', '-', '*'];
+  const randomOperator = operators[Math.floor(Math.random() * operators.length)];
 
-  const taskValue = num1 + " " + randomOperator + " " + num2;
+  const taskValue = `${num1} ${randomOperator} ${num2}`;
 
   values.push(taskValue);
 
   let correctAnswer;
   switch (randomOperator) {
-    case "+":
+    case '+':
       correctAnswer = num1 + num2;
       break;
-    case "-":
+    case '-':
       correctAnswer = num1 - num2;
       break;
-    case "*":
+    case '*':
       correctAnswer = num1 * num2;
   }
   values.push(correctAnswer);
