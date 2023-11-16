@@ -57,25 +57,25 @@ const generateTaskValuesGcd = () => {
     //   }
     // }
 
-    const intersectionLargerNumSmallerNum = [];
+    const intersectionNums = [];
     if (dividerslargerNum.length >= dividersSmallerNum.length) {
       for (const item of dividerslargerNum) {
         if (dividersSmallerNum.includes(item)) {
-          intersectionLargerNumSmallerNum.push(item);
+          intersectionNums.push(item);
         }
       }
     } else {
       for (const item of dividersSmallerNum) {
         if (dividerslargerNum.includes(item)) {
-          intersectionLargerNumSmallerNum.push(item);
+          intersectionNums.push(item);
         }
       }
     }
 
-  const sortIntersectionLargerNumSmallerNum = intersectionLargerNumSmallerNum.sort((a, b) => a - b);
+    const sortIntersectionNums = intersectionNums.sort((a, b) => a - b);
 
-    correctAnswer = sortIntersectionLargerNumSmallerNum[
-      sortIntersectionLargerNumSmallerNum.length - 1
+    correctAnswer = sortIntersectionNums[
+      sortIntersectionNums.length - 1
     ];
 
     values.push(correctAnswer);
