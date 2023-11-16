@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 console.log('Welcome to the Brain Games!');
 const userName = readlineSync.question('May I have your name? ');
 const greeting = () => {
-  console.log(`Hi ${userName}!`);
+  console.log(`Hello, ${userName}!`);
 };
 const taskDescr = (taskPhrase) => {
   console.log(`${taskPhrase}`);
@@ -11,7 +11,6 @@ const taskDescr = (taskPhrase) => {
 
 const isCorrectAnswer = (correctAnswer, userAnswer) => {
   let result;
-  // если ===, то ошибка, если ==, то ругается линтер
   if (correctAnswer.toString === userAnswer) {
     result = true;
   } else {
