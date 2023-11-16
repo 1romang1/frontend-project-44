@@ -11,7 +11,7 @@ const taskDescr = (taskPhrase) => {
 
 const isCorrectAnswer = (correctAnswer, userAnswer) => {
   let result;
-  if (correctAnswer.toString === userAnswer) {
+  if (correctAnswer.toString === userAnswer.toString) {
     result = true;
   } else {
     result = false;
