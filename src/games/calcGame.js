@@ -23,7 +23,7 @@ const generateTaskValuesCalc = () => {
     case '-':
       correctAnswer = num1 - num2;
       break;
-    case '*':
+    default:
       correctAnswer = num1 * num2;
   }
   values.push(correctAnswer);
