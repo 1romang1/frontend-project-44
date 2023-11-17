@@ -42,7 +42,7 @@ const generateTaskValuesGcd = () => {
 
   if (largerNum % smallerNum === 0) {
     correctAnswer = smallerNum;
-    values.push(correctAnswer);
+    values.push(correctAnswer.toString());
   } else {
     const dividerslargerNum = createDeviders(largerNum);
     const dividersSmallerNum = createDeviders(smallerNum);
