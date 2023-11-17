@@ -1,6 +1,6 @@
-import app from "../index.js";
+import app from '../index.js';
 
-const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
+const TASK_PHRASE = 'Find the greatest common divisor of given numbers.';
 
 const createDeviders = (num) => {
   const dividerNum = [];
