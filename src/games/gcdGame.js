@@ -1,6 +1,6 @@
-// import app from "../index.js";
+import app from "../index.js";
 
-// const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
+const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
 
 const createDeviders = (num) => {
   const dividerNum = [];
@@ -45,18 +45,7 @@ const generateTaskValuesGcd = () => {
     values.push(correctAnswer);
   } else {
     const dividerslargerNum = createDeviders(largerNum);
-    // for (let i = 1; i < largerNum; i += 1) {
-    //   if (largerNum % i === 0) {
-    //     dividerslargerNum.push(i);
-    //   }
-    // }
     const dividersSmallerNum = createDeviders(smallerNum);
-    // for (let i = 1; i < smallerNum; i += 1) {
-    //   if (smallerNum % i === 0) {
-    //     dividersSmallerNum.push(i);
-    //   }
-    // }
-
     const intersectionNums = [];
     if (dividerslargerNum.length >= dividersSmallerNum.length) {
       for (const item of dividerslargerNum) {
@@ -77,12 +66,9 @@ const generateTaskValuesGcd = () => {
     correctAnswer = sortIntersectionNums[
       sortIntersectionNums.length - 1
     ];
-
-    values.push(correctAnswer);
+    values.push(correctAnswer.toString());
   }
-  // return values;
-  console.log(`values = ${values}`);
+  return values;
 };
 
-// export default () => app(TASK_PHRASE, generateTaskValuesGcd);
-generateTaskValuesGcd();
+export default () => app(TASK_PHRASE, generateTaskValuesGcd);
