@@ -29,7 +29,7 @@ const generateTaskValuesProgression = () => {
 
   const taskValue = APset.join(' ');
   values.push(taskValue);
-  values.push(correctAnswer);
+  values.push(correctAnswer.toString());
 
   return values;
 };
