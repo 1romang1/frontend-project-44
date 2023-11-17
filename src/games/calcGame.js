@@ -26,7 +26,7 @@ const generateTaskValuesCalc = () => {
     default:
       correctAnswer = num1 * num2;
   }
-  values.push(correctAnswer);
+  values.push(correctAnswer.toString());
   return values;
 };
 
