@@ -49,7 +49,7 @@ const generateTaskValuesGcd = () => {
     let intersectionNums = [];
     if (dividerslargerNum.length >= dividersSmallerNum.length) {
       intersectionNums = dividerslargerNum.map((num) => {
-        let result = [];
+        const result = [];
         if (dividersSmallerNum.includes(num)) {
           result.push(num);
         }
@@ -57,7 +57,7 @@ const generateTaskValuesGcd = () => {
       });
     } else {
       intersectionNums = dividersSmallerNum.map((num) => {
-        let result = [];
+        const result = [];
         if (dividerslargerNum.includes(num)) {
           result.push(num);
         }
