@@ -48,17 +48,21 @@ const generateTaskValuesGcd = () => {
     const dividersSmallerNum = createDeviders(smallerNum);
     const intersectionNums = [];
     if (dividerslargerNum.length >= dividersSmallerNum.length) {
-      for (const item of dividerslargerNum) {
-        if (dividersSmallerNum.includes(item)) {
-          intersectionNums.push(item);
+      intersectionNums = dividerslargerNum.map((num) => {
+        let result = [];
+        if (dividersSmallerNum.includes(num)) {
+          result.push(num);
         }
-      }
+        return result;
+      });
     } else {
-      for (const item of dividersSmallerNum) {
-        if (dividerslargerNum.includes(item)) {
-          intersectionNums.push(item);
+      intersectionNums = dividersSmallerNum.map((num) => {
+        let result = [];
+        if (dividerslargerNum.includes(num)) {
+          result.push(num);
         }
-      }
+        return result;
+      });
     }
 
     const sortIntersectionNums = intersectionNums.sort((a, b) => a - b);
