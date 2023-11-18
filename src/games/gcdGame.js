@@ -46,7 +46,7 @@ const generateTaskValuesGcd = () => {
   } else {
     const dividerslargerNum = createDeviders(largerNum);
     const dividersSmallerNum = createDeviders(smallerNum);
-    const intersectionNums = [];
+    let intersectionNums = [];
     if (dividerslargerNum.length >= dividersSmallerNum.length) {
       intersectionNums = dividerslargerNum.map((num) => {
         let result = [];
