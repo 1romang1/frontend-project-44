@@ -20,16 +20,14 @@ const createIntersectionNums = (nums1, nums2) => {
         intersection.push(num);
       }
     });
-    return intersection;
   } else {
     nums2.map((num) => {
       if (nums1.includes(num)) {
         intersection.push(num);
       }
     });
-    return intersection;
   }
-  // return intersection;
+  return intersection;
 };
 
 const generateTaskValuesGcd = () => {
