@@ -13,21 +13,13 @@ const createDeviders = (num) => {
 };
 
 const createIntersectionNums = (nums1, nums2) => {
-  const intersection = [];
-  if (nums1.length >= nums2.length) {
-    nums1.map((num) => {
-      if (nums2.includes(num)) {
-        intersection.push(num);
-      }
-    });
-  } else {
-    nums2.map((num) => {
-      if (nums1.includes(num)) {
-        intersection.push(num);
-      }
-    });
-  }
-  return intersection;
+  let intersection = [];
+  nums1.map((num) => {
+    if (nums2.includes(num)) {
+      intersection.push(num);
+    }
+  });
+return intersection;
 };
 
 const generateTaskValuesGcd = () => {
@@ -64,10 +56,12 @@ const generateTaskValuesGcd = () => {
   } else {
     const dividerslargerNum = createDeviders(largerNum);
     const dividersSmallerNum = createDeviders(smallerNum);
-    const intersectionNums = createIntersectionNums(
-      dividerslargerNum,
-      dividersSmallerNum,
-    );
+    let intersectionNums = [];
+    if (dividerslargerNum.length >= dividersSmallerNum.length) {
+      intersectionNums = createIntersectionNums (dividerslargerNum, dividersSmallerNum)
+    } else {
+      intersectionNums = createIntersectionNums (dividersSmallerNum, dividerslargerNum)
+    }
 
     const sortIntersectionNums = intersectionNums.sort((a, b) => a - b);
 
