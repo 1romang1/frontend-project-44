@@ -21,26 +21,17 @@ const createIntersectionNums = (arr1, arr2) => {
   }
   return intersection;
 };
-// const createIntersectionNums = (nums1, nums2) => {
-//   const intersection = [];
-//   nums1.map((num) => {
-//     if (nums2.includes(num)) {
-//       intersection.push(num);
-//     }
-//   });
-// return intersection;
-// };
 
 const generateTaskValuesGcd = () => {
   const values = [];
 
   let correctAnswer;
 
-  const MIN = 2;
-  const MAX = 100;
+  const LOWER_RANGE = 2;
+  const UPPER_RANGE = 100;
 
-  const num1 = Math.floor(Math.random() * (MAX - MIN) + MIN);
-  const num2 = Math.floor(Math.random() * (MAX - MIN) + MIN);
+  const num1 = Math.floor(Math.random() * (UPPER_RANGE - LOWER_RANGE) + LOWER_RANGE);
+  const num2 = Math.floor(Math.random() * (UPPER_RANGE - LOWER_RANGE) + LOWER_RANGE);
 
   let smallerNum = 0;
   let largerNum = 0;

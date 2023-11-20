@@ -5,8 +5,10 @@ const TASK_PHRASE = 'What is the result of the expression?';
 const generateTaskValuesCalc = () => {
   const values = [];
 
-  const num1 = Math.floor(Math.random() * 100);
-  const num2 = Math.floor(Math.random() * 100);
+  const UPPER_RANGE = 100;
+
+  const num1 = Math.floor(Math.random() * UPPER_RANGE);
+  const num2 = Math.floor(Math.random() * UPPER_RANGE);
 
   const operators = ['+', '-', '*'];
   const randomOperator = operators[Math.floor(Math.random() * operators.length)];

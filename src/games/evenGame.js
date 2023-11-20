@@ -4,7 +4,8 @@ const TASK_PHRASE = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const generateTaskValuesEven = () => {
   const values = [];
-  const taskValue = Math.floor(Math.random() * 100);
+  const UPPER_RANGE = 100;
+  const taskValue = Math.floor(Math.random() * UPPER_RANGE);
   values.push(taskValue);
   let correctAnswer = '';
   if (taskValue % 2 === 0) {
