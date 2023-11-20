@@ -58,11 +58,7 @@ const generateTaskValuesGcd = () => {
     const dividersSmallerNum = createDeviders(smallerNum);
     const intersectionNums = createIntersectionNums(dividerslargerNum, dividersSmallerNum);
 
-    const sortIntersectionNums = intersectionNums.sort((a, b) => a - b);
-
-    correctAnswer = sortIntersectionNums[
-      sortIntersectionNums.length - 1
-    ];
+    correctAnswer = Math.max(...intersectionNums);
     values.push(correctAnswer.toString());
   }
   return values;
