@@ -1,18 +1,34 @@
-import app from "../index.js";
+import app from '../index.js';
 
-const TASK_PHRASE = "Find the greatest common divisor of given numbers.";
+const TASK_PHRASE = 'Find the greatest common divisor of given numbers.';
+
+const createDeviders = (num) => {
+  const dividerNum = [];
+  for (let i = 1; i < num; i += 1) {
+    if (num % i === 0) {
+      dividerNum.push(i);
+    }
+  }
+  return dividerNum;
+};
+
+const createIntersectionNums = (arr1, arr2) => {
+  const intersection = [];
+  for (let i = 0; i < arr1.length; i += 1) {
+    if (arr2.includes(arr1[i]) && !intersection.includes(arr1[i])) {
+      intersection.push(arr1[i]);
+    }
+  }
+  return intersection;
+};
 
 const generateTaskValuesGcd = () => {
   const values = [];
-
   let correctAnswer;
-
-  const MIN = 2;
-  const MAX = 100;
-
-  const num1 = Math.floor(Math.random() * (MAX - MIN) + MIN);
-  const num2 = Math.floor(Math.random() * (MAX - MIN) + MIN);
-
+  const LOWER_RANGE = 2;
+  const UPPER_RANGE = 100;
+  const num1 = Math.floor(Math.random() * (UPPER_RANGE - LOWER_RANGE) + LOWER_RANGE);
+  const num2 = Math.floor(Math.random() * (UPPER_RANGE - LOWER_RANGE) + LOWER_RANGE);
   let smallerNum = 0;
   let largerNum = 0;
 
@@ -24,53 +40,21 @@ const generateTaskValuesGcd = () => {
     smallerNum = num1;
   }
 
-  let taskValue = [];
+  const taskValue = [];
   taskValue.push(largerNum);
   taskValue.push(smallerNum);
-  taskValue = taskValue.join(' ');
-  values.push(taskValue);
+  values.push(taskValue.join(' '));
 
   if (largerNum % smallerNum === 0) {
     correctAnswer = smallerNum;
-    values.push(correctAnswer);
+    values.push(correctAnswer.toString());
   } else {
-    const dividerslargerNum = [];
-    for (let i = 1; i < largerNum; i += 1) {
-      if (largerNum % i === 0) {
-        dividerslargerNum.push(i);
-      }
-    }
-    const dividersSmallerNum = [];
-    for (let i = 1; i < smallerNum; i += 1) {
-      if (smallerNum % i === 0) {
-        dividersSmallerNum.push(i);
-      }
-    }
+    const dividerslargerNum = createDeviders(largerNum);
+    const dividersSmallerNum = createDeviders(smallerNum);
+    const intersectionNums = createIntersectionNums(dividerslargerNum, dividersSmallerNum);
 
-    const intersectionLargerNumSmallerNum = [];
-    if (dividerslargerNum.length >= dividersSmallerNum.length) {
-      for (const item of dividerslargerNum) {
-        if (dividersSmallerNum.includes(item)) {
-          intersectionLargerNumSmallerNum.push(item);
-        }
-      }
-    } else {
-      for (const item of dividersSmallerNum) {
-        if (dividerslargerNum.includes(item)) {
-          intersectionLargerNumSmallerNum.push(item);
-        }
-      }
-    }
-
-    const sortIntersectionLargerNumSmallerNum =
-      intersectionLargerNumSmallerNum.sort((a, b) => a - b);
-
-    correctAnswer =
-      sortIntersectionLargerNumSmallerNum[
-        sortIntersectionLargerNumSmallerNum.length - 1
-      ];
-
-    values.push(correctAnswer);
+    correctAnswer = Math.max(...intersectionNums);
+    values.push(correctAnswer.toString());
   }
   return values;
 };
