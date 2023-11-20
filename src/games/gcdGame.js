@@ -24,15 +24,11 @@ const createIntersectionNums = (arr1, arr2) => {
 
 const generateTaskValuesGcd = () => {
   const values = [];
-
   let correctAnswer;
-
   const LOWER_RANGE = 2;
   const UPPER_RANGE = 100;
-
   const num1 = Math.floor(Math.random() * (UPPER_RANGE - LOWER_RANGE) + LOWER_RANGE);
   const num2 = Math.floor(Math.random() * (UPPER_RANGE - LOWER_RANGE) + LOWER_RANGE);
-
   let smallerNum = 0;
   let largerNum = 0;
 
@@ -47,8 +43,7 @@ const generateTaskValuesGcd = () => {
   let taskValue = [];
   taskValue.push(largerNum);
   taskValue.push(smallerNum);
-  taskValue = taskValue.join(' ');
-  values.push(taskValue);
+  values.push(taskValue.join(' '));
 
   if (largerNum % smallerNum === 0) {
     correctAnswer = smallerNum;
