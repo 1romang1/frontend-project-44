@@ -40,7 +40,7 @@ const generateTaskValuesGcd = () => {
     smallerNum = num1;
   }
 
-  let taskValue = [];
+  const taskValue = [];
   taskValue.push(largerNum);
   taskValue.push(smallerNum);
   values.push(taskValue.join(' '));
