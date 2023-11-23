@@ -14,12 +14,7 @@ const createDeviders = (num) => {
 };
 
 const createIntersectionNums = (arr1, arr2) => {
-  const intersection = arr1.filter(item => arr2.includes(item));
-  // for (let i = 0; i < arr1.length; i += 1) {
-  //   if (arr2.includes(arr1[i]) && !intersection.includes(arr1[i])) {
-  //     intersection.push(arr1[i]);
-  //   }
-  // }
+  const intersection = arr1.filter((item) => arr2.includes(item));
   return intersection;
 };
 

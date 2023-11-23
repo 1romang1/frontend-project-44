@@ -1,3 +1,3 @@
-const generatorHighLowRanges = (highRange, lowRange) => Math.floor(Math.random() * (highRange - lowRange) + lowRange);
+const generatorHighLowRanges = (high, low) => Math.floor(Math.random() * (high - low) + low);
 
 export default generatorHighLowRanges;

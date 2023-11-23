@@ -12,7 +12,7 @@ const createAP = (num, diffNum) => {
     result.push(nextAPNum);
   }
   return result;
-}
+};
 
 const generateTaskValuesProgression = () => {
   const values = [];
@@ -20,7 +20,7 @@ const generateTaskValuesProgression = () => {
   const UPPER_RANGE = 100;
 
   let APset = [];
-  let startNum = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
+  const startNum = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
 
   APset.push(startNum);
 
@@ -43,4 +43,3 @@ const generateTaskValuesProgression = () => {
 };
 
 export default () => app(TASK_PHRASE, generateTaskValuesProgression);
-
