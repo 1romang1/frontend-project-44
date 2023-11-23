@@ -4,10 +4,11 @@ import generatorHighLowRanges from '../generatorHighLowRanges.js';
 const TASK_PHRASE = 'What number is missing in the progression?';
 
 const createAP = (num, diffNum) => {
-  let result = [];
+  const result = [];
   for (let i = 0; i < 9; i += 1) {
-    const nextAPNum = num + diffNum;
-    num = nextAPNum;
+    let temp = num;
+    const nextAPNum = temp + diffNum;
+    temp = nextAPNum;
     result.push(nextAPNum);
   }
   return result;
@@ -18,14 +19,14 @@ const generateTaskValuesProgression = () => {
   const LOWER_RANGE = 2;
   const UPPER_RANGE = 100;
 
-  let APset = [];
+  const APset = [];
   let startNum = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
 
   APset.push(startNum);
 
   const differenceAP = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
   const tempAPSet = createAP(startNum, differenceAP);
-APset = APset.concat(tempAPSet)
+  APset = APset.concat(tempAPSet);
 
   const randomElement = APset[Math.floor(Math.random() * APset.length)];
 
