@@ -1,9 +1,9 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 const app = (taskPhrase, generateTaskValues) => {
-  console.log("Welcome to the Brain Games!");
-  const userName = readlineSync.question("May I have your name? ");
-  console.log(`Hello, ${userName}`)
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}`);
   console.log(`${taskPhrase}`);
 
   const iterationCounter = 3;
@@ -13,7 +13,7 @@ const app = (taskPhrase, generateTaskValues) => {
     const userAnswer = readlineSync.question(`Question: ${taskValue} `);
     console.log(`Your answer: ${userAnswer}`);
     if (correctAnswer === userAnswer) {
-      console.log("Correct!");
+      console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'
     Let's try again, ${userName}!`);
