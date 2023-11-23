@@ -19,7 +19,7 @@ const generateTaskValuesProgression = () => {
   const LOWER_RANGE = 2;
   const UPPER_RANGE = 100;
 
-  const APset = [];
+  let APset = [];
   let startNum = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
 
   APset.push(startNum);
