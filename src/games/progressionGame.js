@@ -5,8 +5,8 @@ const TASK_PHRASE = 'What number is missing in the progression?';
 
 const createAP = (num, diffNum) => {
   const result = [];
+  let temp = num;
   for (let i = 0; i < 9; i += 1) {
-    let temp = num;
     const nextAPNum = temp + diffNum;
     temp = nextAPNum;
     result.push(nextAPNum);
@@ -43,3 +43,4 @@ const generateTaskValuesProgression = () => {
 };
 
 export default () => app(TASK_PHRASE, generateTaskValuesProgression);
+
