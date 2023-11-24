@@ -23,7 +23,7 @@ const generateTaskValuesCalc = () => {
   const num2 = generatRanges(UPPER_RANGE);
 
   const operators = ['+', '-', '*'];
-  const randomOperator = operators[Math.floor(Math.random() * operators.length)];
+  const randomOperator = operators[generatRanges(operators.length)];
 
   const taskValue = `${num1} ${randomOperator} ${num2}`;
 
