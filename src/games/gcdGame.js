@@ -38,7 +38,6 @@ const generateTaskValuesGcd = () => {
   const taskValue = [];
   taskValue.push(largerNum);
   taskValue.push(smallerNum);
-  values.push(taskValue.join(' '));
 
   if (largerNum % smallerNum === 0) {
     correctAnswer = smallerNum;
@@ -49,7 +48,7 @@ const generateTaskValuesGcd = () => {
 
     correctAnswer = Math.max(...intersectionNums);
   }
-  return [taskValue, correctAnswer.toString()];
+  return [taskValue.join(' '), correctAnswer.toString()];
 };
 
 export default () => app(TASK_PHRASE, generateTaskValuesGcd);
