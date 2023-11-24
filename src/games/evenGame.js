@@ -14,13 +14,10 @@ const isEven = (value) => {
 };
 
 const generateTaskValuesEven = () => {
-  const values = [];
   const UPPER_RANGE = 100;
   const taskValue = generatorHighRange(UPPER_RANGE);
-  values.push(taskValue);
   const correctAnswer = isEven(taskValue);
-  values.push(correctAnswer);
-  return values;
+  return [taskValue, correctAnswer.toString()];
 };
 
 export default () => app(TASK_PHRASE, generateTaskValuesEven);

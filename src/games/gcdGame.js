@@ -19,7 +19,6 @@ const createIntersectionNums = (arr1, arr2) => {
 };
 
 const generateTaskValuesGcd = () => {
-  const values = [];
   let correctAnswer;
   const LOWER_RANGE = 2;
   const UPPER_RANGE = 100;
@@ -43,16 +42,14 @@ const generateTaskValuesGcd = () => {
 
   if (largerNum % smallerNum === 0) {
     correctAnswer = smallerNum;
-    values.push(correctAnswer.toString());
   } else {
     const dividerslargerNum = createDeviders(largerNum);
     const dividersSmallerNum = createDeviders(smallerNum);
     const intersectionNums = createIntersectionNums(dividerslargerNum, dividersSmallerNum);
 
     correctAnswer = Math.max(...intersectionNums);
-    values.push(correctAnswer.toString());
   }
-  return values;
+  return [taskValue, correctAnswer.toString()];
 };
 
 export default () => app(TASK_PHRASE, generateTaskValuesGcd);

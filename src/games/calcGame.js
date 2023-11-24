@@ -17,9 +17,7 @@ const solution = (num1, num2, operator) => {
 };
 
 const generateTaskValuesCalc = () => {
-  const values = [];
-
-  const UPPER_RANGE = 100;
+    const UPPER_RANGE = 100;
 
   const num1 = generatorHighRange(UPPER_RANGE);
   const num2 = generatorHighRange(UPPER_RANGE);
@@ -28,11 +26,9 @@ const generateTaskValuesCalc = () => {
   const randomOperator = operators[Math.floor(Math.random() * operators.length)];
 
   const taskValue = `${num1} ${randomOperator} ${num2}`;
-  values.push(taskValue);
 
   const correctAnswer = solution(num1, num2, randomOperator);
-  values.push(correctAnswer.toString());
-  return values;
+  return [taskValue, correctAnswer.toString()];
 };
 
 export default () => app(TASK_PHRASE, generateTaskValuesCalc);

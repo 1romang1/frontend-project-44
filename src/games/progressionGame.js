@@ -15,7 +15,6 @@ const createAP = (num, diffNum) => {
 };
 
 const generateTaskValuesProgression = () => {
-  const values = [];
   const LOWER_RANGE = 2;
   const UPPER_RANGE = 100;
 
@@ -36,10 +35,7 @@ const generateTaskValuesProgression = () => {
   APset[indexOfElement] = '..';
 
   const taskValue = APset.join(' ');
-  values.push(taskValue);
-  values.push(correctAnswer.toString());
-
-  return values;
+  return [taskValue, correctAnswer.toString()];
 };
 
 export default () => app(TASK_PHRASE, generateTaskValuesProgression);
