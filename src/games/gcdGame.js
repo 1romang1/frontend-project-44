@@ -1,4 +1,5 @@
 import app from '../index.js';
+import generatorHighLowRanges from '../generatorHighLowRanges.js';
 
 const TASK_PHRASE = 'Find the greatest common divisor of given numbers.';
 
@@ -13,12 +14,7 @@ const createDeviders = (num) => {
 };
 
 const createIntersectionNums = (arr1, arr2) => {
-  const intersection = [];
-  for (let i = 0; i < arr1.length; i += 1) {
-    if (arr2.includes(arr1[i]) && !intersection.includes(arr1[i])) {
-      intersection.push(arr1[i]);
-    }
-  }
+  const intersection = arr1.filter((item) => arr2.includes(item));
   return intersection;
 };
 
@@ -27,8 +23,8 @@ const generateTaskValuesGcd = () => {
   let correctAnswer;
   const LOWER_RANGE = 2;
   const UPPER_RANGE = 100;
-  const num1 = Math.floor(Math.random() * (UPPER_RANGE - LOWER_RANGE) + LOWER_RANGE);
-  const num2 = Math.floor(Math.random() * (UPPER_RANGE - LOWER_RANGE) + LOWER_RANGE);
+  const num1 = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
+  const num2 = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
   let smallerNum = 0;
   let largerNum = 0;
 
