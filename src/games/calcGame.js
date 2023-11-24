@@ -12,7 +12,7 @@ const solution = (num1, num2, operator) => {
     case '*':
       return num1 * num2;
     default:
-      console.log('Error!');
+      throw new Error('Oops');
   }
 };
 
