@@ -4,18 +4,16 @@ import generatorHighRange from '../generatorHighRange.js';
 const TASK_PHRASE = 'What is the result of the expression?';
 
 const solution = (num1, num2, operator) => {
-  let result;
   switch (operator) {
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
     default:
-      result = num1 * num2;
+      console.log('Error!');
   }
-  return result;
 };
 
 const generateTaskValuesCalc = () => {
