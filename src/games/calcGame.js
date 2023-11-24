@@ -17,7 +17,7 @@ const solution = (num1, num2, operator) => {
 };
 
 const generateTaskValuesCalc = () => {
-    const UPPER_RANGE = 100;
+  const UPPER_RANGE = 100;
 
   const num1 = generatorHighRange(UPPER_RANGE);
   const num2 = generatorHighRange(UPPER_RANGE);
