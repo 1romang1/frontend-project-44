@@ -1,5 +1,5 @@
 import app from '../index.js';
-import generatorHighLowRanges from '../generatorHighLowRanges.js';
+import generatRanges from '../generatRanges.js';
 
 const TASK_PHRASE = 'What number is missing in the progression?';
 
@@ -19,11 +19,11 @@ const generateTaskValuesProgression = () => {
   const UPPER_RANGE = 100;
 
   let APset = [];
-  const startNum = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
+  const startNum = generatRanges(UPPER_RANGE, LOWER_RANGE);
 
   APset.push(startNum);
 
-  const differenceAP = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
+  const differenceAP = generatRanges(UPPER_RANGE, LOWER_RANGE);
   const tempAPSet = createAP(startNum, differenceAP);
   APset = APset.concat(tempAPSet);
 

@@ -1,5 +1,5 @@
 import app from '../index.js';
-import generatorHighLowRanges from '../generatorHighLowRanges.js';
+import generatRanges from '../generatRanges.js';
 
 const TASK_PHRASE = 'Find the greatest common divisor of given numbers.';
 
@@ -22,8 +22,8 @@ const generateTaskValuesGcd = () => {
   let correctAnswer;
   const LOWER_RANGE = 2;
   const UPPER_RANGE = 100;
-  const num1 = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
-  const num2 = generatorHighLowRanges(UPPER_RANGE, LOWER_RANGE);
+  const num1 = generatRanges(UPPER_RANGE, LOWER_RANGE);
+  const num2 = generatRanges(UPPER_RANGE, LOWER_RANGE);
   let smallerNum = 0;
   let largerNum = 0;
 
