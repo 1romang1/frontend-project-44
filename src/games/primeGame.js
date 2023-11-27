@@ -2,13 +2,11 @@ import app from '../index.js';
 import generatRanges from '../generatRanges.js';
 
 const isPrime = (value) => {
-  let result;
+  let result = true;
   for (let i = 2; i < value; i += 1) {
     if (value % i === 0) {
       result = false;
-      break;
-    } else {
-      result = true;
+      return result;
     }
   }
   return result;
