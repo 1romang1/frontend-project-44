@@ -5,10 +5,9 @@ const TASK_PHRASE = 'What number is missing in the progression?';
 
 const createAP = (num, diffNum) => {
   const result = [];
-  let temp = num;
+  let nextAPNum = num;
   for (let i = 0; i < 9; i += 1) {
-    const nextAPNum = temp + diffNum;
-    temp = nextAPNum;
+    nextAPNum += diffNum;
     result.push(nextAPNum);
   }
   return result;
