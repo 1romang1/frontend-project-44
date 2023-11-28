@@ -18,23 +18,23 @@ const generateTaskValuesProgression = () => {
   const LOWER_RANGE = 2;
   const UPPER_RANGE = 100;
 
-  let APset = [];
+  let apSet = [];
   const startNum = generatRanges(UPPER_RANGE, LOWER_RANGE);
 
-  APset.push(startNum);
+  apSet.push(startNum);
 
   const differenceAP = generatRanges(UPPER_RANGE, LOWER_RANGE);
-  const tempAPSet = createAP(startNum, differenceAP);
-  APset = APset.concat(tempAPSet);
+  const tempapSet = createAP(startNum, differenceAP);
+  apSet = apSet.concat(tempapSet);
 
-  const randomElement = APset[Math.floor(Math.random() * APset.length)];
+  const randomElement = apSet[Math.floor(Math.random() * apSet.length)];
 
-  const indexOfElement = APset.indexOf(randomElement);
+  const indexOfElement = apSet.indexOf(randomElement);
 
-  const correctAnswer = APset[indexOfElement];
-  APset[indexOfElement] = '..';
+  const correctAnswer = apSet[indexOfElement];
+  apSet[indexOfElement] = '..';
 
-  const taskValue = APset.join(' ');
+  const taskValue = apSet.join(' ');
   return [taskValue, correctAnswer.toString()];
 };
 
