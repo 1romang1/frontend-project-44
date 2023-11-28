@@ -3,7 +3,7 @@ import generatRanges from '../generatRanges.js';
 
 const TASK_PHRASE = 'What is the result of the expression?';
 
-const solution = (num1, num2, operator) => {
+const getExpression = (num1, num2, operator) => {
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -27,7 +27,7 @@ const generateTaskValuesCalc = () => {
 
   const taskValue = `${num1} ${randomOperator} ${num2}`;
 
-  const correctAnswer = solution(num1, num2, randomOperator);
+  const correctAnswer = getExpression(num1, num2, randomOperator);
   return [taskValue, correctAnswer.toString()];
 };
 
