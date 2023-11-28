@@ -1,5 +1,5 @@
 import app from '../index.js';
-import generatRanges from '../generatRanges.js';
+import generateRanges from '../generateRanges.js';
 
 const TASK_PHRASE = 'What is the result of the expression?';
 
@@ -19,11 +19,11 @@ const getExpression = (num1, num2, operator) => {
 const generateTaskValuesCalc = () => {
   const UPPER_RANGE = 100;
 
-  const num1 = generatRanges(UPPER_RANGE);
-  const num2 = generatRanges(UPPER_RANGE);
+  const num1 = generateRanges(UPPER_RANGE);
+  const num2 = generateRanges(UPPER_RANGE);
 
   const operators = ['+', '-', '*'];
-  const randomOperator = operators[generatRanges(operators.length)];
+  const randomOperator = operators[generateRanges(operators.length)];
 
   const taskValue = `${num1} ${randomOperator} ${num2}`;
 
