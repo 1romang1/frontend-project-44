@@ -12,7 +12,6 @@ const app = (taskPhrase, generateTaskValues) => {
     const [taskValue, correctAnswer] = generateTaskValues();
     const userAnswer = readlineSync.question(`Question: ${taskValue} `);
     console.log(`Your answer: ${userAnswer}`);
-    console.log(`Your answer: ${!!userAnswer}`);
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
     } else {
