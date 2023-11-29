@@ -19,15 +19,14 @@ const createIntersectionNums = (arr1, arr2) => {
 };
 
 const findGcd = (num1, num2) => {
-  let result;
+  let result = 0;
   if (num1 % num2 === 0) {
-    result = num2;
-  } else {
-    const dividerslargerNum = createDeviders(num1);
-    const dividersSmallerNum = createDeviders(num2);
-    const intersectionNums = createIntersectionNums(dividerslargerNum, dividersSmallerNum);
-    result = Math.max(...intersectionNums);
+    return num2;
   }
+  const dividerslargerNum = createDeviders(num1);
+  const dividersSmallerNum = createDeviders(num2);
+  const intersectionNums = createIntersectionNums(dividerslargerNum, dividersSmallerNum);
+  result = Math.max(...intersectionNums);
   return result;
 };
 
