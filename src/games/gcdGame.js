@@ -19,39 +19,28 @@ const createIntersectionNums = (arr1, arr2) => {
 };
 
 const findGcd = (num1, num2) => {
-  let result = 0;
   if (num1 % num2 === 0) {
     return num2;
   }
   const dividerslargerNum = createDeviders(num1);
   const dividersSmallerNum = createDeviders(num2);
   const intersectionNums = createIntersectionNums(dividerslargerNum, dividersSmallerNum);
-  result = Math.max(...intersectionNums);
+  const result = Math.max(...intersectionNums);
   return result;
 };
 
 const generateTaskValuesGcd = () => {
-  let correctAnswer = 0;
   const LOWER_RANGE = 2;
   const UPPER_RANGE = 100;
   const num1 = generateRanges(UPPER_RANGE, LOWER_RANGE);
   const num2 = generateRanges(UPPER_RANGE, LOWER_RANGE);
-  let smallerNum = 0;
-  let largerNum = 0;
-
-  if (num1 > num2) {
-    largerNum = num1;
-    smallerNum = num2;
-  } else {
-    largerNum = num2;
-    smallerNum = num1;
-  }
-
+  const smallerNum = num1 > num2 ? num2 : num1;
+  const largerNum = num1 > num2 ? num1 : num2;
   const taskValue = [];
   taskValue.push(largerNum);
   taskValue.push(smallerNum);
 
-  correctAnswer = findGcd(largerNum, smallerNum);
+  const correctAnswer = findGcd(largerNum, smallerNum);
 
   return [taskValue.join(' '), correctAnswer.toString()];
 };
