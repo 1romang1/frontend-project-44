@@ -36,10 +36,6 @@ const generateTaskValuesGcd = () => {
   const num2 = generateRanges(UPPER_RANGE, LOWER_RANGE);
   const smallerNum = num1 > num2 ? num2 : num1;
   const largerNum = num1 > num2 ? num1 : num2;
-  const taskValue = [];
-  taskValue.push(largerNum);
-  taskValue.push(smallerNum);
-
   const correctAnswer = findGcd(largerNum, smallerNum);
 
   return [`${largerNum} ${smallerNum}`, correctAnswer.toString()];
