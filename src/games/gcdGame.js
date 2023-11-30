@@ -42,7 +42,7 @@ const generateTaskValuesGcd = () => {
 
   const correctAnswer = findGcd(largerNum, smallerNum);
 
-  return [taskValue.join(' '), correctAnswer.toString()];
+  return [`${largerNum} ${smallerNum}`, correctAnswer.toString()];
 };
 
 export default () => app(TASK_PHRASE, generateTaskValuesGcd);
