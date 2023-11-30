@@ -21,9 +21,15 @@ const createAp = () => {
 
 const generateTaskValuesProgression = () => {
   const apSet = createAp();
-  const hiddenElement = apSet[generateRanges(apSet.length)];
-  const correctAnswer = hiddenElement;
-  apSet[apSet.indexOf(hiddenElement)] = '..';
+  // const hiddenElement = apSet[generateRanges(apSet.length)];
+  // const correctAnswer = hiddenElement;
+  // apSet[apSet.indexOf(hiddenElement)] = '..';
+  const randomNum = generateRanges(apSet.length);
+  const correctAnswer = apSet[randomNum];
+  apSet[randomNum] = '..';
+
+
+
   const taskValue = apSet.join(' ');
   return [taskValue, correctAnswer.toString()];
 };
